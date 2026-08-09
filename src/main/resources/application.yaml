@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: webchat
+  cloud:
+    function:
+      definition: healthcheck;chat
+server:
+  servlet:
+    context-path: /api
+
+foundry:
+  endpoint: ${FOUNDRY_ENDPOINT:}
+  agent-name: ${FOUNDRY_AGENT_NAME:Betty}
+  agent-version: ${FOUNDRY_AGENT_VERSION:2}
+  api-key: ${FOUNDRY_API_KEY:}

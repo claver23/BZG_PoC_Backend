@@ -1,0 +1,135 @@
+{
+  "escrituras-publicas": {
+    "nombre": "Escrituras Públicas",
+    "url": "https://notariabeatrizzevallos.com.pe/escrituras-publicas/",
+    "items": [
+      {
+        "nombre": "Anticipo de Herencia",
+        "descripcion": "Permite transferir en vida parte de los bienes a favor de futuros herederos, formalizando el acto mediante escritura pública.",
+        "requisitos": [
+          "Minuta firmada por los intervinientes y autorizada por el abogado.",
+          "Copia del documento de identidad de los intervinientes.",
+          "Partida de nacimiento actualizada del o los anticipados. Si fue emitida en provincia, debe ser autenticada por RENIEC.",
+          "Si los anticipantes son casados entre sí, presentar partida de matrimonio actualizada.",
+          "Copia literal de la partida registral.",
+          "Vigencia de poder y testimonio del otorgamiento de poder, si corresponde.",
+          "HR, PU y pago del impuesto predial del año en curso, 4 trimestres.",
+          "Constancia de no adeudo desde el año de adquisición hasta la actualidad."
+        ],
+        "informacion": ""
+      }
+    ]
+  },
+  "asuntos-no-contenciosos": {
+    "nombre": "Asuntos No Contenciosos",
+    "url": "https://notariabeatrizzevallos.com.pe/asuntos-no-contenciosos/",
+    "items": [
+      {
+        "nombre": "Adopción de Persona Capaz",
+        "descripcion": "Permite que una persona mayor de edad sea adoptada legalmente por otra, mediante un procedimiento notarial que formaliza el vínculo jurídico entre adoptante y adoptado. Este acto genera los derechos y obligaciones establecidos por la legislación peruana.",
+        "requisitos": [
+          "Minuta o solicitud firmada por el adoptante y el adoptado, autorizada por abogado.",
+          "Copia del Documento Nacional de Identidad, DNI, del adoptante y del adoptado.",
+          "Partida de nacimiento del adoptante.",
+          "Partida de nacimiento del adoptado.",
+          "Partida de matrimonio del adoptante, en caso de ser casado.",
+          "Consentimiento del cónyuge del adoptante, si corresponde.",
+          "Las partidas deberán ser actualizadas.",
+          "Las partidas emitidas en provincia deberán contar con certificación de RENIEC o código de verificación.",
+          "Otros documentos que el notario considere necesarios para la evaluación del expediente."
+        ],
+        "informacion": ""
+      }
+    ]
+  },
+  "transferencias-vehiculares": {
+    "nombre": "Transferencias Vehiculares",
+    "url": "https://notariabeatrizzevallos.com.pe/transferencias-vehiculares/",
+    "items": [
+      {
+        "nombre": "Transferencias Vehiculares",
+        "descripcion": "Las transferencias vehiculares permiten formalizar la compra, venta o cualquier acto de transferencia de propiedad de un vehículo automotor mediante Acta de Transferencia Vehicular, otorgando seguridad jurídica a la operación y permitiendo la inscripción del nuevo propietario en el Registro de Propiedad Vehicular de la SUNARP, conforme a la normativa vigente.",
+        "requisitos": [
+          "Tarjeta de Identificación Vehicular (TIV) original.",
+          "En caso de Tarjeta de Identificación Vehicular Electrónica (TIVE), presentar la impresión correspondiente con código QR.",
+          "Seguro Obligatorio de Accidentes de Tránsito (SOAT) vigente. Cuando el SOAT sea electrónico, deberá presentarse impreso para su verificación.",
+          "Documento Nacional de Identidad (DNI) original y vigente del comprador y del vendedor. Los ciudadanos extranjeros deberán presentar Carné de Extranjería, CPP o Pasaporte vigente, según corresponda.",
+          "Cuando sea necesario, podrá intervenir un testigo de identificación conforme a la normativa notarial vigente.",
+          "Si el vendedor es casado y el vehículo forma parte de la sociedad de gananciales, deberá intervenir su cónyuge.",
+          "Si el vehículo constituye bien propio, deberá acreditarse dicha condición con la documentación correspondiente.",
+          "Cuando exista separación de patrimonios inscrita, deberá presentarse la documentación registral que lo acredite.",
+          "Documento que acredite el medio de pago utilizado en la compraventa, cuando corresponda, conforme a la Ley de Bancarización. Se aceptan depósitos bancarios, transferencias bancarias o interbancarias, cheques de gerencia no negociables y demás medios de pago permitidos por ley.",
+          "Para vehículos afectos al Impuesto al Patrimonio Vehicular, deberá acreditarse el pago correspondiente y, de ser necesario, presentar constancia de no adeudo emitida por la municipalidad competente.",
+          "Cuando intervenga una persona jurídica, deberá presentarse la Vigencia de Poder actualizada del representante legal, copia literal de la partida registral de la persona jurídica y ficha RUC o documento equivalente que permita su identificación.",
+          "Cuando las circunstancias del acto lo requieran, la notaría podrá solicitar documentación adicional que permita verificar la capacidad, identidad, representación o legitimidad de los intervinientes.",
+          "Tratándose de personas de edad avanzada, la notaría podrá requerir documentación complementaria que acredite su capacidad para celebrar el acto."
+        ],
+        "informacion": ""
+      }
+    ]
+  },
+  "cartas-notariales": {
+    "nombre": "Cartas Notariales",
+    "url": "https://notariabeatrizzevallos.com.pe/cartas-notariales/",
+    "items": [
+      {
+        "nombre": "Cartas Notariales",
+        "descripcion": "El diligenciamiento de cartas notariales es el acto mediante el cual el notario certifica la recepción, entrega, negativa de recepción o cualquier otra circunstancia relacionada con la remisión de una comunicación dirigida a una persona natural o jurídica. La intervención notarial otorga certeza respecto de la remisión y diligenciamiento de la comunicación, mas no sobre la veracidad o contenido de la misma.",
+        "requisitos": [
+          "Documento de identidad original y vigente del remitente.",
+          "Carta notarial debidamente suscrita por el remitente.",
+          "Dirección exacta y completa del destinatario para la realización de la diligencia.",
+          "En caso de personas jurídicas, documento de identidad del representante legal.",
+          "Vigencia de poder actualizada u otro documento que acredite representación suficiente, cuando corresponda.",
+          "Nombre completo o razón social del destinatario.",
+          "Datos que permitan la correcta ubicación del destinatario.",
+          "Documentación adicional que la notaría considere necesaria para el diligenciamiento."
+        ],
+        "informacion": ""
+      }
+    ]
+  },
+  "tramites-extra-protocolares": {
+    "nombre": "Trámites Extra Protocolares",
+    "url": "https://notariabeatrizzevallos.com.pe/tramites-extra-protocolares/",
+    "items": [
+      {
+        "nombre": "Autorización de Viaje al Interior",
+        "descripcion": "Permite que uno o ambos padres, o quien ejerza la representación legal del menor de edad, autoricen formalmente su desplazamiento dentro del territorio nacional cuando la legislación vigente así lo requiera. Este documento brinda seguridad jurídica durante el viaje y facilita su acreditación ante las autoridades competentes.",
+        "requisitos": [
+          "Partida o acta de nacimiento actualizada del menor.",
+          "Documento de identidad vigente del padre o madre solicitante.",
+          "Documento de identidad vigente del menor.",
+          "Datos completos de la persona responsable del menor durante el viaje.",
+          "Si el menor viajará sin acompañante, indicar la empresa de transporte y demás datos requeridos.",
+          "La autorización puede ser otorgada por cualquiera de los padres.",
+          "El trámite es personal y requiere la presencia del padre o madre solicitante.",
+          "Los documentos emitidos en el extranjero deberán encontrarse debidamente apostillados o legalizados.",
+          "La documentación presentada será evaluada por la notaría."
+        ],
+        "informacion": ""
+      }
+    ]
+  },
+  "legalizaciones-y-certificaciones": {
+    "nombre": "Legalizaciones y Certificaciones",
+    "url": "https://notariabeatrizzevallos.com.pe/legalizaciones-y-certificaciones/",
+    "items": [
+      {
+        "nombre": "Apertura de Libros",
+        "descripcion": "Es la legalización notarial de libros, registros u hojas sueltas pertenecientes a personas naturales, empresas, asociaciones u otras entidades, conforme a la legislación vigente.",
+        "requisitos": [
+          "Libro, padrón u hojas sueltas que serán materia de legalización.",
+          "Documento de identidad original y vigente del titular o representante legal.",
+          "Ficha RUC, cuando corresponda.",
+          "Copia literal actualizada de la partida registral de la persona jurídica, cuando corresponda.",
+          "En caso de asociaciones o comedores en constitución, podrá presentarse la reserva de nombre o la documentación que acredite su formación, como resoluciones municipales.",
+          "La legalización de Libros de Actas, Libro Padrón de Asociados, Libro Matrícula de Acciones y demás libros societarios deberá ser solicitada únicamente por el representante legal o titular.",
+          "La legalización de Libros Contables podrá ser solicitada por un tercero autorizado mediante carta poder simple suscrita por el titular, adjuntando copia de su documento de identidad.",
+          "La documentación presentada será evaluada previamente por la notaría."
+        ],
+        "informacion": ""
+      }
+    ]
+  }
+}
