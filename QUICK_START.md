@@ -21,8 +21,6 @@ mvn clean package azure-functions:run
 ### Despliegue a Azure
 
 ```powershell
-# Despliegue completo (recomendado)
-mvn clean package azure-functions:deploy
 
 # Solo empaquetar (sin desplegar)
 mvn clean package azure-functions:package
@@ -126,20 +124,16 @@ az functionapp show --name webchat-bz --resource-group RG_MOEBIUS --query state
 | healthcheck | GET | `/api/healthcheck` | FUNCTION | Estado del servicio |
 | chat | POST | `/api/chat` | FUNCTION | Chat con IA |
 
-## 📦 Crear ZIP Manualmente (Opcional)
+## 📦 Crear ZIP Manualmente (Opcional - No Recomendado)
 
 ```powershell
-# Comprimir el directorio de Azure Functions
+# Solo si necesitas crear un ZIP manualmente para algún propósito
 Compress-Archive -Path "target\azure-functions\webchat-bz\*" `
   -DestinationPath "target\webchat-bz.zip" `
   -Force
-
-# Desplegar el ZIP
-az functionapp deployment source config-zip `
-  --resource-group RG_MOEBIUS `
-  --name webchat-bz `
-  --src target\webchat-bz.zip
 ```
+
+**Nota:** Esto NO es necesario para el despliegue normal. El comando `mvn azure-functions:deploy` maneja todo automáticamente.
 
 ---
 

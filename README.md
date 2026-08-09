@@ -133,98 +133,64 @@ mvn azure-functions:run
 
 ### 6. Despliegue a Azure
 
-**Nota:** Azure Functions se puede desplegar de dos maneras principales:
+**Importante:** El comando correcto de despliegue que REALMENTE funciona es el siguiente.
 
-1. **Maven Plugin (Opción A)**: El plugin de Azure Functions para Maven maneja todo automáticamente
-2. **Azure CLI con ZIP (Opción B)**: Control manual del proceso creando un archivo ZIP del directorio generado
-
-#### Opción A: Despliegue Automatizado con Maven (Recomendado)
+#### Comando de Despliegue (Probado y Funcional)
 
 ```powershell
-# 1. Login en Azure
+# Login en Azure
 az login
 
-# 2. Compilar y desplegar en un solo comando
-mvn clean package azure-functions:deploy
+# Despliegue completo - ESTE ES EL COMANDO CORRECTO
+mvn clean package azure-functions:package azure-functions:deploy
 ```
 
-Este comando realizará:
-- Compilación del proyecto
-- Empaquetado de las Azure Functions
-- Creación de la Function App (si no existe)
-- Despliegue del código a Azure
+**¿Por qué este comando?**
+- `mvn clean` - Limpia compilaciones anteriores
+- `mvn package` - Compila y empaqueta el JAR de Spring Boot
+- `azure-functions:package` - Genera el directorio `target/azure-functions/webchat-bz/` con todas las funciones
+- `azure-functions:deploy` - Despliega a Azure usando el directorio generado
 
-#### Opción B: Despliegue Manual con Azure CLI
+**Nota:** Si ejecutas solo `mvn azure-functions:deploy` sin el `package` previo, obtendrás un error indicando que el directorio no existe.
+
+### 7. Obtener Function Keys
+
+**Importante:** Cada función tiene su propia Function Key individual.
 
 ```powershell
-# 1. Compilar y empaquetar
-mvn clean package azure-functions:package
+# Obtener key de ping
+az functionapp function keys list --function-name ping --name webchat-bz --resource-group RG_MOEBIUS
 
-# 2. Login en Azure
-az login
+# Obtener key de healthcheck
+az functionapp function keys list --function-name healthcheck --name webchat-bz --resource-group RG_MOEBIUS
 
-# 3. Crear resource group (si no existe)
-az group create --name RG_MOEBIUS --location eastus2
-
-# 4. Crear storage account (si no existe)
-az storage account create `
-  --name webchatbzstorage `
-  --resource-group RG_MOEBIUS `
-  --location eastus2 `
-  --sku Standard_LRS
-
-# 5. Crear Azure Function App (si no existe)
-az functionapp create `
-  --resource-group RG_MOEBIUS `
-  --name webchat-bz `
-  --consumption-plan-location eastus2 `
-  --runtime java `
-  --runtime-version 21 `
-  --functions-version 4 `
-  --os-type Linux `
-  --storage-account webchatbzstorage
-
-# 6. Configurar variables de aplicación
-az functionapp config appsettings set `
-  --name webchat-bz `
-  --resource-group RG_MOEBIUS `
-  --settings "FOUNDRY_ENDPOINT=https://[foundry-name].services.ai.azure.com/api/projects/[project-name]" `
-             "FOUNDRY_AGENT_NAME=Betty" `
-             "FOUNDRY_AGENT_VERSION=2" `
-             "FOUNDRY_API_KEY=tu-api-key-aqui"
-
-# 7. Crear archivo ZIP del directorio de Azure Functions
-Compress-Archive -Path "target\azure-functions\webchat-bz\*" -DestinationPath "target\webchat-bz.zip" -Force
-
-# 8. Desplegar el código usando ZIP
-az functionapp deployment source config-zip `
-  --resource-group RG_MOEBIUS `
-  --name webchat-bz `
-  --src target\webchat-bz.zip
+# Obtener key de chat
+az functionapp function keys list --function-name chat --name webchat-bz --resource-group RG_MOEBIUS
 ```
 
-### 7. Verificación del Despliegue
+### 8. Verificación del Despliegue
 
 ```powershell
 # Verificar estado de la Function App
 az functionapp show --name webchat-bz --resource-group RG_MOEBIUS
 
-# Obtener las Function Keys
-az functionapp keys list --name webchat-bz --resource-group RG_MOEBIUS
+# Probar ping (sustituye YOUR_PING_KEY con la key obtenida)
+Invoke-WebRequest -Uri "https://webchat-bz-f0c4bjgmhzhsh9ge.eastus2-01.azurewebsites.net/api/ping" `
+  -Headers @{"x-functions-key"="YOUR_PING_KEY"} `
+  -UseBasicParsing
 
-# Probar el endpoint de ping (requiere Function Key)
-curl https://webchat-bz.azurewebsites.net/api/ping `
-  -H "x-functions-key: tu-function-key"
+# Probar healthcheck (sustituye YOUR_HEALTHCHECK_KEY con la key obtenida)
+Invoke-WebRequest -Uri "https://webchat-bz-f0c4bjgmhzhsh9ge.eastus2-01.azurewebsites.net/api/healthcheck" `
+  -Headers @{"x-functions-key"="YOUR_HEALTHCHECK_KEY"} `
+  -UseBasicParsing
 
-# Probar el healthcheck (requiere Function Key)
-curl https://webchat-bz.azurewebsites.net/api/healthcheck `
-  -H "x-functions-key: tu-function-key"
-
-# Probar el chat (requiere Function Key)
-curl -X POST https://webchat-bz.azurewebsites.net/api/chat `
-  -H "Content-Type: application/json" `
-  -H "x-functions-key: tu-function-key" `
-  -d '{\"message\": \"Hola, necesito información sobre transferencias vehiculares\"}'
+# Probar chat (sustituye YOUR_CHAT_KEY con la key obtenida)
+$body = '{"message":"Hola, necesito información sobre transferencias vehiculares"}'
+Invoke-WebRequest -Uri "https://webchat-bz-f0c4bjgmhzhsh9ge.eastus2-01.azurewebsites.net/api/chat" `
+  -Method POST `
+  -Headers @{"x-functions-key"="YOUR_CHAT_KEY"; "Content-Type"="application/json"} `
+  -Body $body `
+  -UseBasicParsing
 ```
 
 ## 🧪 Pruebas

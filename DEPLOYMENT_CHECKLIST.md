@@ -163,24 +163,28 @@
 
 - [ ] Ping funciona
   ```powershell
-  curl https://webchat-bz.azurewebsites.net/api/ping `
-    -H "x-functions-key: TU_KEY_AQUI"
+  Invoke-WebRequest -Uri "https://webchat-bz-f0c4bjgmhzhsh9ge.eastus2-01.azurewebsites.net/api/ping" `
+    -Headers @{"x-functions-key"="TU_KEY_DE_PING"} `
+    -UseBasicParsing
   # Respuesta: pong
   ```
 
 - [ ] Healthcheck funciona
   ```powershell
-  curl https://webchat-bz.azurewebsites.net/api/healthcheck `
-    -H "x-functions-key: TU_KEY_AQUI"
+  Invoke-WebRequest -Uri "https://webchat-bz-f0c4bjgmhzhsh9ge.eastus2-01.azurewebsites.net/api/healthcheck" `
+    -Headers @{"x-functions-key"="TU_KEY_DE_HEALTHCHECK"} `
+    -UseBasicParsing
   # Respuesta: JSON con status
   ```
 
 - [ ] Chat funciona
   ```powershell
-  curl -X POST https://webchat-bz.azurewebsites.net/api/chat `
-    -H "Content-Type: application/json" `
-    -H "x-functions-key: TU_KEY_AQUI" `
-    -d '{\"message\": \"Hola\"}'
+  $body = '{"message":"Hola"}'
+  Invoke-WebRequest -Uri "https://webchat-bz-f0c4bjgmhzhsh9ge.eastus2-01.azurewebsites.net/api/chat" `
+    -Method POST `
+    -Headers @{"x-functions-key"="TU_KEY_DE_CHAT"; "Content-Type"="application/json"} `
+    -Body $body `
+    -UseBasicParsing
   # Respuesta: JSON con respuesta del agente
   ```
 
